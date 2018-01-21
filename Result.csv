@@ -1,0 +1,5 @@
+merger_closer_gender,creator_gender,total,merged,closed,percent_merged
+Female,Female,2436,1989,447,0.8165
+Female,Male,15715,13129,2586,0.8354
+Male,Female,19617,15026,4591,0.7660
+Male,Male,604883,450509,154374,0.7448
