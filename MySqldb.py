@@ -4,10 +4,22 @@ import csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import pymysql
+import config
 
 # Open database connection
 
-db = MySQLdb.connect("host","username","password","database",port )
+def connect_db(dbname):
+    if dbname != config.DATABASE_CONFIG['dbname']:
+        raise ValueError("Couldn't not find DB with given name")
+    conn = pymysql.connect(host=config.DATABASE_CONFIG['host'],
+                           user=config.DATABASE_CONFIG['user'],
+                           password=config.DATABASE_CONFIG['password'],
+                           port=config.DATABASE_CONFIG['port'],
+                           db=config.DATABASE_CONFIG['dbname'])
+    return conn
+
+db = connect_db('ghtorrent')
 
 # prepare a cursor object using cursor() method
 
