@@ -82,10 +82,13 @@ rects2 = plt.bar(index + bar_width, male_merger, bar_width,
                  color=male_color,
                  label='Male')
  
-plt.xlabel('Merger or Closer')
-plt.ylabel('Avg Merging Rate')
-plt.title('Tug of War')
-plt.xticks(index + bar_width/2 , ('Female', 'Male'))
+plt.rcParams.update({'font.size': 30})
+plt.yticks(fontsize=25)
+plt.ylim(ymin=0.6)
+plt.xlabel('Merger or Closer',fontsize=30)
+plt.ylabel('Avg Merging Rate',fontsize=30)
+#plt.title('Tug of War',fontsize=30)
+plt.xticks(index + bar_width/2 , ('Female', 'Male'),fontsize=30)
 plt.legend()
  
 plt.tight_layout()
