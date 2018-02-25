@@ -18,6 +18,8 @@ for infile in glob.glob (os.path.join(path, '*.*')):
 	soup = BeautifulSoup(f, "lxml")
 	bio = soup.find_all("div", class_="p-note user-profile-bio")
 	uname = soup.find("span", class_="p-nickname vcard-username d-block")	
+	if uname == None:
+		continue	
 	biostr = ""
 	for res in bio:
 		biostr = biostr + res.text
